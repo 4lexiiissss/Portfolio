@@ -52,3 +52,18 @@ filterButtons.forEach(btn => {
         });
     });
 });
+
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('#nav-list');
+
+// 1. Ouvrir le menu au clic sur le burger
+menu.addEventListener('click', function() {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+});
+
+// 2. Fermer le menu automatiquement quand on clique sur un lien
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+  menu.classList.remove('is-active');
+  menuLinks.classList.remove('active');
+}));
